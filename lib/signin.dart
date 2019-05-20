@@ -27,6 +27,7 @@ class _SignIn extends State<SignIn> {
             child: Container(
                 padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Image.asset(
                       'assets/LogoOnly.png',
@@ -99,7 +100,7 @@ class _SignIn extends State<SignIn> {
                       child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text('Already have a login ID? Click here to ',
+                      Text("Don't have a login ID? Click here to ",
                           style: TextStyle(
                             color: const Color(0xff5a5a5a),
                             fontSize: 15,

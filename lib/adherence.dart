@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-class SignUp extends StatefulWidget {
+class Adherence extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _SignUp();
+    return _Adherence();
   }
 }
 
-class _SignUp extends State<SignUp> {
+class _Adherence extends State<Adherence> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -138,14 +139,7 @@ class _SignUp extends State<SignUp> {
                       )
                     ],
                   ))),
-              Container(
-                child: ButtonTheme(
-                    child: RaisedButton(
-                  color: const Color(0xff5CC7D8),
-                  child: const Text('Sign In'),
-                  onPressed: () => {},
-                )),
-              ),
+
             ],
           ),
         ])));
