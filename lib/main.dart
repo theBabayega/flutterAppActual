@@ -4,11 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart';
 
 
-import './mainPages/testingCharts.dart';
-import './mainPages/chartsOtherTest.dart';
-import './signup.dart';
-import './signin.dart';
-import './adherence.dart';
+// import './mainPages/testingCharts.dart';
+// import './mainPages/myAdherencePage.dart';
+// import './signup.dart';
+// import './signin.dart';
+// import './adherence.dart';
+// import './mainPages/myDoses.dart';
+// import './mainPages/myOrders.dart';
+import './mainPages/onBoarding.dart';
 
 // import 'dart:math';
 void main() {
@@ -28,6 +31,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner : false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: SafeArea(child: MyHomePage())));
+            body: SafeArea(child: OnBoarding())));
   }
 }
