@@ -167,22 +167,26 @@ class MyHomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
+                ButtonTheme(
+                    minWidth:110.0,
+                    child: RaisedButton(
                   color: const Color(0xff5ac7d8),
                   child: Text(
                     'Current Refill',
                     style: TextStyle(color: const Color(0xffffffff)),
                   ),
                   onPressed: () => {},
-                ),
-                RaisedButton(
-                  color: const Color(0xffffffff),
-                  child: Text(
-                    'Lifetime',
-                    style: TextStyle(color: const Color(0xff5ac7d8)),
-                  ),
-                  onPressed: () => {},
-                )
+                )),
+                ButtonTheme(
+                    minWidth: 110.0,
+                    child: RaisedButton(
+                      color: const Color(0xffffffff),
+                      child: Text(
+                        'Lifetime',
+                        style: TextStyle(color: const Color(0xff5ac7d8)),
+                      ),
+                      onPressed: () => {},
+                    ))
               ],
             )
           ],

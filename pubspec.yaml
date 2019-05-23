@@ -50,7 +50,12 @@ flutter:
   - assets/bg.png
   - assets/info.png
   - assets/LogoOnly.png
-
+  - assets/Stepper-0.png
+  - assets/Stepper-1.png
+  - assets/Stepper-2.png
+  - assets/Stepper-3.png
+  - assets/Stepper-4.png
+  - assets/Stepper-5.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

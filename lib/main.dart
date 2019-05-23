@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart';
 
-
 // import './mainPages/testingCharts.dart';
 // import './mainPages/myAdherencePage.dart';
 // import './signup.dart';
 // import './signin.dart';
 // import './adherence.dart';
 // import './mainPages/myDoses.dart';
-// import './mainPages/myOrders.dart';
-import './mainPages/onBoarding.dart';
+import './mainPages/myOrders.dart';
+// import './mainPages/testShadow.dart';
+// import './mainPages/onBoarding.dart';
 
 // import 'dart:math';
 void main() {
@@ -31,6 +31,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner : false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: SafeArea(child: OnBoarding())));
+            body: SafeArea(child: MyOrders())));
   }
 }
