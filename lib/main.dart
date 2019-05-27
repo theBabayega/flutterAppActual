@@ -9,9 +9,10 @@ import 'package:flutter/rendering.dart';
 // import './signin.dart';
 // import './adherence.dart';
 // import './mainPages/myDoses.dart';
-import './mainPages/myOrders.dart';
+// import './mainPages/myOrders.dart';
 // import './mainPages/testShadow.dart';
 // import './mainPages/onBoarding.dart';
+import './mainPages/orderDetailsPage.dart';
 
 // import 'dart:math';
 void main() {
@@ -31,6 +32,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner : false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: SafeArea(child: MyOrders())));
+            body: SafeArea(child: OrderDetailPage())));
   }
 }

@@ -27,15 +27,27 @@ class _MyOrders extends State<MyOrders> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              child: Text(
-                'Next Carefill',
-                style: TextStyle(
-                  color: const Color(0xff494949),
-                  fontWeight: FontWeight.w700,
-                  fontSize: 42,
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Order',
+                  style: TextStyle(
+                    color: const Color(0xff494949),
+                    fontWeight: FontWeight.w700,
+                    fontSize: 42,
+                  ),
                 ),
-              ),
-            ),
+                Text(
+                  'Order',
+                  style: TextStyle(
+                    color: const Color(0xff494949),
+                    fontWeight: FontWeight.w700,
+                    fontSize: 42,
+                  ),
+                ),
+              ],
+            )),
             Container(
               margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
               padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
@@ -199,7 +211,7 @@ class _MyOrders extends State<MyOrders> {
                                   new Radius.circular(7.0)),
                               boxShadow: [
                                 CustomBoxShadow(
-                                    color: const Color(0xff494949),
+                                    // color: const Color(0xff494949),
                                     offset: Offset(0.0, 0.0),
                                     blurRadius: 2.0,
                                     blurStyle: BlurStyle.outer),
