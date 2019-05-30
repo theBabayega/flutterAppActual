@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import './customShadow.dart';
+import '../Components/customShadow.dart';
 
 class MyOrders extends StatefulWidget {
   @override

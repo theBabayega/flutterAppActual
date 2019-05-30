@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
-import './customShadow.dart';
+import '../Components/customShadow.dart';
+import '../Components/CDOpacityContainer.dart';
 
 class confirmRefill extends StatefulWidget {
   @override
@@ -37,66 +39,436 @@ class _confirmRefill extends State<confirmRefill> {
                     child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      'Confirm Refill',
-                      style: TextStyle(
-                        color: const Color(0xff494949),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 38,
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      child: Text(
+                        'Confirm Refill',
+                        style: TextStyle(
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 32,
+                        ),
                       ),
                     ),
-                  ],
-                )),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
-                      width: double.infinity,
-                      child: Image.asset('assets/LogoOnly.png', height: 100),
-                    ),
-                    Container(
-                      child: Image.asset('assets/LogoOnly.png', height: 150),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: <Widget>[
-                    Container(
-                        margin: EdgeInsets.fromLTRB(0, 40, 0, 40),
-                        child: Text(
-                          'Your refill has been confirmed!',
-                          style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.w700),
+                      padding: EdgeInsets.only(bottom: 10),
+                      child:Row(
+                      children: <Widget>[
+                        Container(
+                          margin:EdgeInsets.only(right: 18),
+                          child:Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Start Date ',
+                              style: TextStyle(
+                                color: const Color(0xff494949),
+                                fontWeight: FontWeight.w900,
+                                fontSize: 17,
+                              ),
+                            ),
+                            Text(
+                              'Duration',
+                              style: TextStyle(
+                                color: const Color(0xff494949),
+                                fontWeight: FontWeight.w900,
+                                fontSize: 17,
+                              ),
+                            ),
+                          ],
                         )),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              '2nd June 2019',
+                              style: TextStyle(
+                                color: const Color(0xff494949),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 17,
+                              ),
+                            ),
+                            Text(
+                              '30 Days',
+                              style: TextStyle(
+                                color: const Color(0xff494949),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 17,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 7),
+                      child: Text(
+                        'Upcoming Medicines',
+                        style: TextStyle(
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                    CDOpacityContainer(
+                        Container(
+                          padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+                          child: Column(
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        '1 Tab ',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w900,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Crocin Cold N Flu',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 19,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    'till 2/7/19',
+                                    style: TextStyle(
+                                      color: const Color(0xff494949),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 17,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        'Twice a day,',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      Text(
+                                        'every day',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        '60',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      Text(
+                                        ' tabs',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        0x1fEC4D62,
+                        CardType.confirmRefill),
+                    CDOpacityContainer(
+                        Container(
+                          padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+                          child: Column(
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        '1 Tab ',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w900,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Crocin Cold N Flu',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 19,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    'till 2/7/19',
+                                    style: TextStyle(
+                                      color: const Color(0xff494949),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 17,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        'Twice a day,',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      Text(
+                                        'every day',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        '60',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      Text(
+                                        ' tabs',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        0x1fEC4D62,
+                        CardType.confirmRefill),
+                    CDOpacityContainer(
+                        Container(
+                          padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+                          child: Column(
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        '1 Tab ',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w900,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Crocin Cold N Flu',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 19,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    'till 2/7/19',
+                                    style: TextStyle(
+                                      color: const Color(0xff494949),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 17,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        'Twice a day,',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      Text(
+                                        'every day',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        '60',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      Text(
+                                        ' tabs',
+                                        style: TextStyle(
+                                          color: const Color(0xff494949),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        0x1fEC4D62,
+                        CardType.confirmRefill),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      child: Text(
+                        'Is everything in order?',
+                        style: TextStyle(
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                      child: ButtonTheme(
+                        minWidth: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: RaisedButton(
+                          color: Colors.green,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'Yes,',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                              Text(
+                                'confirm refill',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          onPressed: () => {},
+                        ),
+                      ),
+                    ),
                     ButtonTheme(
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       minWidth: double.infinity,
                       child: RaisedButton(
-                        color: Colors.green,
-                        padding: EdgeInsets.symmetric(vertical: 14),
-                        child: Text('Continue to Payment',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400)),
+                        color: Colors.orange,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'No,',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            Text(
+                              'something has changed',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
                         onPressed: () => {},
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 40),
+                      child: Divider(
+                        color: Colors.black,
+                        height: 32,
                       ),
                     )
                   ],
-                )
+                )),
               ])),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              RaisedButton(
-                color: Colors.blue,
-                child: Text('Question?Request a callback',
-                    style: TextStyle(color: Colors.white)),
+          ButtonTheme(
+              padding: EdgeInsets.symmetric(vertical: 15),
+              minWidth: double.infinity,
+              child: RaisedButton(
+                color: Colors.red,
+                child:
+                    Text('STOP Refill', style: TextStyle(color: Colors.white)),
                 onPressed: () => {},
-              )
-            ],
-          )
+              )),
         ]));
   }
 }

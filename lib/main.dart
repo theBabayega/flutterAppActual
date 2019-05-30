@@ -20,8 +20,6 @@ import './mainPages/confirmRefill.dart';
 void main() {
   // debugPaintSizeEnabled = true;
   SystemChrome.setEnabledSystemUIOverlays([]);
-
-
   runApp(MyApp());
 }
 
