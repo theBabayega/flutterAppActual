@@ -2,16 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
- import '../Components/customShadow.dart';
+import '../Components/customShadow.dart';
 
- class confirmRefill extends StatefulWidget {
+class confirmedRefill extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _confirmRefill();
+    return _confirmedRefill();
   }
 }
 
- class _confirmRefill extends State<confirmRefill> {
+class _confirmedRefill extends State<confirmedRefill> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,35 +54,64 @@ import 'package:flutter/rendering.dart';
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
                       width: double.infinity,
-                      child: Image.asset('assets/LogoOnly.png', height: 100),
+                      child: Image.asset('assets/LogoOnly.png', height: 75),
                     ),
                     Container(
-                      child: Image.asset('assets/LogoOnly.png', height: 150),
+                      child: Image.asset('assets/LogoOnly.png', height: 100),
                     ),
                   ],
                 ),
                 Column(
                   children: <Widget>[
                     Container(
-                        margin: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                        margin: EdgeInsets.fromLTRB(0, 40, 0, 5),
                         child: Text(
                           'Your refill has been confirmed!',
                           style: TextStyle(
                               fontSize: 24, fontWeight: FontWeight.w700),
                         )),
+                    Container(
+                        margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
+                        child: Text(
+                          'and will be delivered by',
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w400),
+                        )),
+                    Container(
+                        margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
+                        child: Text(
+                          '30th May 2019',
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w700),
+                        )),
                     ButtonTheme(
-                      minWidth: double.infinity,
+                      minWidth: 200,
                       child: RaisedButton(
-                        color: Colors.green,
-                        padding: EdgeInsets.symmetric(vertical: 14),
+                        color: Colors.blue,
+                        padding: EdgeInsets.symmetric(vertical: 4),
                         child: Text('Continue to Payment',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 20,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w400)),
                         onPressed: () => {},
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child:ButtonTheme(
+                      minWidth: 200,
+                      child: RaisedButton(
+                        color: Colors.red,
+                        padding: EdgeInsets.symmetric(vertical: 4),
+                        child: Text('Cancel and start again',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400)),
+                        onPressed: () => {},
+                      ),
+                    ))
                   ],
                 )
               ])),

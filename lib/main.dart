@@ -12,9 +12,9 @@ import 'package:flutter/rendering.dart';
 // import './mainPages/myOrders.dart';
 // import './mainPages/testShadow.dart';
 // import './mainPages/onBoarding.dart';
-import './mainPages/orderDetailsPage.dart';
+// import './mainPages/orderDetailsPage.dart';
 // import './mainPages/confirmRefill.dart';
-// import './mainPages/confirmedRefill.dart';
+import './mainPages/confirmedRefill.dart';
 // import './mainPages/paymentSuccessful.dart';
 // import './mainPages/changesRequired.dart';
 
@@ -36,6 +36,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner : false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: SafeArea(child: OrderDetailPage())));
+            body: SafeArea(child: confirmedRefill())));
   }
 }
