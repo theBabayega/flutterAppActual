@@ -7,6 +7,7 @@ enum CardType {
   confirmRefill,
   payment,
   orderDetail,
+  stopRefill,
 }
 
 class CDOpacityContainer extends StatelessWidget {
@@ -21,28 +22,34 @@ class CDOpacityContainer extends StatelessWidget {
       return EdgeInsets.fromLTRB(0, 20, 0, 20);
     } else if (cardType == CardType.payment) {
       return EdgeInsets.fromLTRB(0, 6, 0, 6);
+    } else if (cardType == CardType.stopRefill) {
+      return EdgeInsets.fromLTRB(0, 6, 0, 6);
     }
     return EdgeInsets.fromLTRB(0, 6, 0, 60);
   }
 
-   dynamic marginValues(CardType cardType) {
+  dynamic marginValues(CardType cardType) {
     if (cardType == CardType.confirmRefill) {
       return EdgeInsets.fromLTRB(0, 3, 0, 3);
     } else if (cardType == CardType.orderDetail) {
       return EdgeInsets.fromLTRB(0, 6, 0, 6);
     } else if (cardType == CardType.payment) {
       return EdgeInsets.fromLTRB(0, 6, 0, 6);
+    } else if (cardType == CardType.stopRefill) {
+      return EdgeInsets.fromLTRB(0, 6, 0, 6);
     }
     return EdgeInsets.fromLTRB(0, 6, 0, 6);
   }
 
-    double heightValue(CardType cardType) {
+  double heightValue(CardType cardType) {
     if (cardType == CardType.confirmRefill) {
       return 58;
     } else if (cardType == CardType.orderDetail) {
       return 100;
     } else if (cardType == CardType.payment) {
       return 400;
+    } else if (cardType == CardType.stopRefill) {
+      return 100;
     }
     return 0;
   }
@@ -53,6 +60,8 @@ class CDOpacityContainer extends StatelessWidget {
     } else if (cardType == CardType.orderDetail) {
       return 7.0;
     } else if (cardType == CardType.payment) {
+      return 7.0;
+    } else if (cardType == CardType.stopRefill) {
       return 7.0;
     }
     return 0;
@@ -68,7 +77,8 @@ class CDOpacityContainer extends StatelessWidget {
         height: heightValue(_cardType),
         decoration: BoxDecoration(
             color: Color(_color),
-            borderRadius: new BorderRadius.all(new Radius.circular(borderRadius(_cardType))),
+            borderRadius: new BorderRadius.all(
+                new Radius.circular(borderRadius(_cardType))),
             boxShadow: [
               CustomBoxShadow(
                   color: const Color(0xff494949),
