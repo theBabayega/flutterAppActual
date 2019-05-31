@@ -49,7 +49,7 @@ class CDOpacityContainer extends StatelessWidget {
     } else if (cardType == CardType.payment) {
       return 400;
     } else if (cardType == CardType.stopRefill) {
-      return 100;
+      return 50;
     }
     return 0;
   }

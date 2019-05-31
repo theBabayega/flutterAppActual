@@ -13,18 +13,17 @@ class ChangesRequired extends StatefulWidget {
 }
 
 class _ChangesRequired extends State<ChangesRequired> {
-  List<bool> _reasonCheck = [true,false];
+  List<bool> _reasonCheck = [false, false, false];
 
-  _reasonToggle(int index) {
+  _reasonValueChange(int index) {
     if (_reasonCheck[index] == true) {
-      _reasonCheck[index] = false;
-      return Image.asset('assets/LogoOnly.png',height:20);
+      setState(() {
+        _reasonCheck[index] = false;
+      });
     } else {
-      _reasonCheck[index] = true;
-      return Opacity(
-        opacity: 0,
-        child: Image.asset('assets/LogoOnly.png',height:20),
-      );
+      setState(() {
+        _reasonCheck[index] = true;
+      });
     }
   }
 
@@ -67,271 +66,144 @@ class _ChangesRequired extends State<ChangesRequired> {
                 )
               ],
             )),
-            Container(
-              child: Expanded(
+            GestureDetector(
+                onTap: () {
+                  _reasonValueChange(0);
+                },
                 child: CDOpacityContainer(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            child: Text(
+                              'Reason 1',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w700),
+                            )),
+                        Container(
+                            padding: EdgeInsets.fromLTRB(10, 2, 10, 2),
+                            child: _reasonCheck[0]
+                                ? Image.asset('assets/LogoOnly.png', height: 40)
+                                : SizedBox(
+                                    height: 40,
+                                  ))
+                      ],
+                    ),
+                    0x22EC4D62,
+                    CardType.stopRefill)),
+            GestureDetector(
+                onTap: () {
+                  _reasonValueChange(1);
+                },
+                child: CDOpacityContainer(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            child: Text(
+                              'Reason 2',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w700),
+                            )),
+                        Container(
+                            padding: EdgeInsets.fromLTRB(10, 2, 10, 2),
+                            child: _reasonCheck[1]
+                                ? Image.asset('assets/LogoOnly.png', height: 40)
+                                : SizedBox(
+                                    height: 40,
+                                  ))
+                      ],
+                    ),
+                    0x22EC4D62,
+                    CardType.stopRefill)),
+            GestureDetector(
+              onTap: () {
+                _reasonValueChange(2);
+              },
+              child: CDOpacityContainer(
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text('Reason 1'),
-                      _reasonToggle(0)
+                      Container(
+                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          child: Text(
+                            'Reason 3',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w700),
+                          )),
+                      Container(
+                          padding: EdgeInsets.fromLTRB(10, 2, 10, 2),
+                          child: _reasonCheck[2]
+                              ? Image.asset('assets/LogoOnly.png', height: 40)
+                              : SizedBox(
+                                  height: 40,
+                                ))
                     ],
                   ),
-                  0x22494949,
-                  CardType.stopRefill
-                ),
-              ),
+                  0x22EC4D62,
+                  CardType.stopRefill),
             ),
             Container(
               padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    'Would you like us to call you?',
-                    style: TextStyle(
-                      color: const Color(0xff494949),
-                      fontWeight: FontWeight.w700,
-                      fontSize: 24,
-                    ),
-                  ),
-                  Container(
-                    height: 300,
-                    child: ListView(
+                  Padding(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        'Would you like us to call you?',
+                        style: TextStyle(
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 24,
+                        ),
+                      )),
+                  ButtonTheme(
+                      child: RaisedButton(
+                    padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    color: Colors.green,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 6, 0, 6),
-                          padding: EdgeInsets.fromLTRB(0.0, 20, 0.0, 20),
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: const Color(0x445CC7D8),
-                              borderRadius: new BorderRadius.all(
-                                  new Radius.circular(7.0)),
-                              boxShadow: [
-                                CustomBoxShadow(
-                                    color: const Color(0xff494949),
-                                    offset: Offset(0.0, 0.0),
-                                    blurRadius: 2.0,
-                                    blurStyle: BlurStyle.outer),
-                              ]),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        // color: const Color(0xff909090),
-                                        border: Border(
-                                            right: BorderSide(
-                                      color: const Color(0xfff3898a),
-                                      width: 1,
-                                    ))),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Text(
-                                          '1st Oct 2018',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        ),
-                                        Text(
-                                          '-',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        ),
-                                        Text(
-                                          'Active',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            color: Color(0xff00ff00),
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )),
-                              Expanded(
-                                  flex: 2,
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          // color: const Color(0xff909090),
-                                          border: Border(
-                                              right: BorderSide(
-                                        color: const Color(0xfff3898a),
-                                        width: 1,
-                                      ))),
-                                      child: Container(
-                                          child: Image.asset(
-                                              'assets/LogoOnly.png',
-                                              height: 60)))),
-                              Expanded(
-                                  flex: 2,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        // color: const Color(0xff909090),
-                                        border: Border(
-                                            right: BorderSide(
-                                      color: const Color(0xfff3898a),
-                                      width: 1,
-                                    ))),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: <Widget>[
-                                        Text(
-                                          '4',
-                                          style: TextStyle(
-                                            fontSize: 24,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        ),
-                                        Text(
-                                          'Carefills',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )),
-                              Expanded(
-                                  flex: 2,
-                                  child: Container(
-                                      child: Text(
-                                    '#9999',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w900,
-                                    ),
-                                  ))),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 6, 0, 6),
-                          padding: EdgeInsets.fromLTRB(0.0, 20, 0.0, 20),
-                          height: 100,
-                          decoration: BoxDecoration(
-                              color: const Color(0x22EC4D62),
-                              borderRadius: new BorderRadius.all(
-                                  new Radius.circular(7.0)),
-                              boxShadow: [
-                                CustomBoxShadow(
-                                    color: const Color(0xff494949),
-                                    offset: Offset(0.0, 0.0),
-                                    blurRadius: 2.0,
-                                    blurStyle: BlurStyle.outer),
-                              ]),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        // color: const Color(0xff909090),
-                                        border: Border(
-                                            right: BorderSide(
-                                      color: const Color(0xfff3898a),
-                                      width: 1,
-                                    ))),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Text(
-                                          '1st Oct 2018',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        ),
-                                        Text(
-                                          '-',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        ),
-                                        Text(
-                                          '2nd Dec 2018',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )),
-                              Expanded(
-                                  flex: 2,
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          // color: const Color(0xff909090),
-                                          border: Border(
-                                              right: BorderSide(
-                                        color: const Color(0xfff3898a),
-                                        width: 1,
-                                      ))),
-                                      child: Container(
-                                          child: Image.asset(
-                                              'assets/LogoOnly.png',
-                                              height: 60)))),
-                              Expanded(
-                                  flex: 2,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        // color: const Color(0xff909090),
-                                        border: Border(
-                                            right: BorderSide(
-                                      color: const Color(0xfff3898a),
-                                      width: 1,
-                                    ))),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: <Widget>[
-                                        Text(
-                                          '4',
-                                          style: TextStyle(
-                                            fontSize: 24,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        ),
-                                        Text(
-                                          'Carefills',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )),
-                              Expanded(
-                                  flex: 2,
-                                  child: Container(
-                                      child: Text(
-                                    '#9998',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w900,
-                                    ),
-                                  ))),
-                            ],
-                          ),
-                        ),
+                        Text('Yes',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18)),
+                        Text(', please call me',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 18))
                       ],
                     ),
-                  )
+                    onPressed: () => {},
+                  )),
+                  Padding(
+                      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      child: Text('OR',
+                          style: TextStyle(
+                              color: Color(0xff494949),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 24))),
+                  ButtonTheme(
+                      child: RaisedButton(
+                    padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    color: Colors.green,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Call Us',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18)),
+                      ],
+                    ),
+                    onPressed: () => {},
+                  )),
                 ],
               ),
             )
