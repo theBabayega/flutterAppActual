@@ -55,40 +55,62 @@ class _OnBoarding extends State<OnBoarding> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xff576164),
-                              fontSize: 32,
-                            )))
+                              fontSize: 24,
+                            ))),
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: Container(
+                            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            child: Text("Reference ID : 1234567890",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xff576164),
+                                  fontSize: 18,
+                                )))),
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: ButtonTheme(
+                          minWidth: 200,
+                          child: RaisedButton(
+                            color: Colors.red,
+                            child: Text('Cancel',
+                                style: TextStyle(color: Colors.white)),
+                            onPressed: () => {},
+                          ),
+                        )),
                   ],
                 )),
           ),
           Container(
-            padding:EdgeInsets.fromLTRB(14,0,0,0),
-            child:Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                  child: Row(
-                    children: <Widget>[
-                      Text("Need Help? Call Us! ",
-                          style: TextStyle(
-                            color: const Color(0xff5a5a5a),
-                            fontSize: 15,
-                            fontFamily: 'roboto',
-                          )),
-                    ],
+            padding: EdgeInsets.fromLTRB(14, 0, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                    child: Row(
+                      children: <Widget>[
+                        Text("Need Help? Call Us! ",
+                            style: TextStyle(
+                              color: const Color(0xff5a5a5a),
+                              fontSize: 15,
+                              fontFamily: 'roboto',
+                            )),
+                      ],
+                    )),
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  child: ButtonTheme(
+                      child: RaisedButton(
+                    color: const Color(0xff5CC7D8),
+                    child: const Text('Call',
+                        style: TextStyle(color: const Color(0xffffffff))),
+                    onPressed: () => {},
                   )),
-              Container(
-                padding: EdgeInsets.only(left: 10),
-                child: ButtonTheme(
-                    child: RaisedButton(
-                  color: const Color(0xff5CC7D8),
-                  child: const Text('Call',
-                      style: TextStyle(color: const Color(0xffffffff))),
-                  onPressed: () => {},
-                )),
-              ),
-            ],
-          ),),
+                ),
+              ],
+            ),
+          ),
         ])));
   }
 }
