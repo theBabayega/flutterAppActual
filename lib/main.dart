@@ -8,7 +8,7 @@ import 'package:flutter/rendering.dart';
 // import './signup.dart';
 // import './signin.dart';
 // import './adherence.dart';
-// import './mainPages/myDoses.dart';
+import './mainPages/myDoses.dart';
 // import './mainPages/myOrders.dart';
 // import './mainPages/testShadow.dart';
 // import './mainPages/onBoarding.dart';
@@ -18,7 +18,9 @@ import 'package:flutter/rendering.dart';
 // import './mainPages/paymentSuccessful.dart';
 // import './mainPages/changesRequired.dart';
 // import './mainPages/orderSuccessfulS2.dart';
-import './mainPages/stopRefill.dart';
+// import './mainPages/stopRefill.dart';
+// import './mainPages/homePage.dart';
+
 
 
 
@@ -40,6 +42,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner : false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: SafeArea(child:  StopRefill())));
+            body: SafeArea(child:  MyHomePage())));
   }
 }
