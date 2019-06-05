@@ -8,7 +8,7 @@ import 'package:flutter/rendering.dart';
 // import './signup.dart';
 // import './signin.dart';
 // import './adherence.dart';
-import './mainPages/myDoses.dart';
+// import './mainPages/myDoses.dart';
 // import './mainPages/myOrders.dart';
 // import './mainPages/testShadow.dart';
 // import './mainPages/onBoarding.dart';
@@ -19,11 +19,8 @@ import './mainPages/myDoses.dart';
 // import './mainPages/changesRequired.dart';
 // import './mainPages/orderSuccessfulS2.dart';
 // import './mainPages/stopRefill.dart';
-// import './mainPages/homePage.dart';
-
-
-
-
+import './mainPages/homePage.dart';
+// import './mainPages/myDosesSimple.dart';
 
 
 // import 'dart:math';
@@ -42,6 +39,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner : false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: SafeArea(child:  MyHomePage())));
+            body: SafeArea(child: Home())));
   }
 }
