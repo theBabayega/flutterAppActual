@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart';
 
 // import './mainPages/testingCharts.dart';
-import './mainPages/myAdherencePage.dart';
+// import './mainPages/myAdherencePage.dart';
 // import './signup.dart';
 // import './signin.dart';
 // import './adherence.dart';
@@ -21,6 +21,7 @@ import './mainPages/myAdherencePage.dart';
 // import './mainPages/stopRefill.dart';
 // import './mainPages/homePage.dart';
 // import './mainPages/myDosesSimple.dart';
+import './Components/loader.dart';
 
 
 // import 'dart:math';
@@ -39,6 +40,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner : false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
-            body: SafeArea(child: MyHomePage())));
+            body: SafeArea(child: Loader(50))));
   }
 }
