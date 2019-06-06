@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/rendering.dart';
 
+import '../Components/loader.dart';
+
 class ClicksPerYear {
   final String year;
   final int clicks;
@@ -168,15 +170,15 @@ class MyHomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 ButtonTheme(
-                    minWidth:110.0,
+                    minWidth: 110.0,
                     child: RaisedButton(
-                  color: const Color(0xff5ac7d8),
-                  child: Text(
-                    'Current Refill',
-                    style: TextStyle(color: const Color(0xffffffff)),
-                  ),
-                  onPressed: () => {},
-                )),
+                      color: const Color(0xff5ac7d8),
+                      child: Text(
+                        'Current Refill',
+                        style: TextStyle(color: const Color(0xffffffff)),
+                      ),
+                      onPressed: () => {},
+                    )),
                 ButtonTheme(
                     minWidth: 110.0,
                     child: RaisedButton(
@@ -188,7 +190,9 @@ class MyHomePage extends StatelessWidget {
                       onPressed: () => {},
                     ))
               ],
-            )
+            ),
+            Loader(60),
+
           ],
         ),
       ),

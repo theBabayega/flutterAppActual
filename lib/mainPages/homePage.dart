@@ -179,7 +179,7 @@ class HomeStatus {
         user = User.fromJson(json['user']);
 }
 
-const baseUrl = "http://192.168.86.73:3000//api/users/home_info.json";
+const baseUrl = "http://192.168.86.73:3000/api/users/home_info.json";
 
 class _Home extends State<Home> {
   HomeStatus status;
